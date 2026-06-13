@@ -991,8 +991,41 @@ function HomePage({ setPage }) {
             </NeonButton>
           </div>
 
+          {/* Mobile polaroids — visible only below lg */}
+          <div className="flex lg:hidden justify-center gap-5 mt-10"
+            style={{ animation: 'fadeUp 0.6s ease-out 1.5s forwards', opacity: 0 }}>
+            {/* Neha */}
+            <div style={{ background: 'white', padding: '6px 6px 22px', borderRadius: 3,
+              boxShadow: '0 10px 35px rgba(236,72,153,0.22), 0 0 0 1px rgba(236,72,153,0.12)',
+              animation: 'heroPhotoFloat1 5s ease-in-out infinite' }}>
+              <div style={{ width: 110, height: 138, overflow: 'hidden', background: '#FFE4F0' }}>
+                <img src="/photos/photo7.jpg" alt="Neha"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
+              </div>
+              <p style={{ textAlign: 'center', marginTop: 6, fontSize: 9,
+                letterSpacing: '0.16em', fontFamily: 'Space Grotesk, sans-serif',
+                color: '#BE185D', fontWeight: 700, textTransform: 'uppercase' }}>
+                Neha 💕
+              </p>
+            </div>
+            {/* Together */}
+            <div style={{ background: 'white', padding: '6px 6px 22px', borderRadius: 3,
+              boxShadow: '0 10px 35px rgba(168,85,247,0.22), 0 0 0 1px rgba(168,85,247,0.1)',
+              animation: 'heroPhotoFloat2 6.5s ease-in-out infinite' }}>
+              <div style={{ width: 110, height: 138, overflow: 'hidden', background: '#F3E8FF' }}>
+                <img src="/photos/photo12.jpg" alt="Together"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+              </div>
+              <p style={{ textAlign: 'center', marginTop: 6, fontSize: 9,
+                letterSpacing: '0.16em', fontFamily: 'Space Grotesk, sans-serif',
+                color: '#7C3AED', fontWeight: 700, textTransform: 'uppercase' }}>
+                Together 🙏
+              </p>
+            </div>
+          </div>
+
           {/* Scroll hint */}
-          <div className="mt-14 flex flex-col items-center gap-2"
+          <div className="mt-10 flex flex-col items-center gap-2"
             style={{ opacity: 0.35, animation: 'fadeUp 0.6s ease-out 1.8s forwards' }}>
             <div className="w-5 h-8 rounded-full border border-[#EC4899]/40 flex items-start justify-center pt-1.5">
               <div className="w-0.5 h-2 bg-[#EC4899] rounded-full" style={{ animation: 'neonPulse 1.2s ease-in-out infinite' }} />
