@@ -564,23 +564,23 @@ function NavBar({ page, setPage }) {
     </button>
   )
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 h-14 flex items-center"
+    <nav className="fixed top-0 left-0 right-0 z-40 h-14 flex items-center justify-between px-5 sm:px-10 lg:justify-center lg:px-0"
       style={{
         background: scrolled ? 'rgba(255,240,248,0.92)' : 'rgba(255,240,248,0.6)',
         backdropFilter: 'blur(16px)',
         borderBottom: scrolled ? '1px solid rgba(236,72,153,0.15)' : '1px solid rgba(236,72,153,0.08)',
         transition: 'background 0.35s ease, border-color 0.35s ease',
       }}>
-      {/* Logo — left */}
-      <div className="absolute left-5 sm:left-10">
+      {/* Logo — left on mobile, absolute on lg+ */}
+      <div className="lg:absolute lg:left-10">
         <button onClick={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           className="font-space font-bold text-base tracking-wider text-[#1E0615]/90 hover:text-[#1E0615] transition-colors">
           <span className="text-gradient-purple">NEHA</span>
           <span className="text-[#BE185D]/40 text-xs ml-2 font-mono">50th</span>
         </button>
       </div>
-      {/* Tabs — centered */}
-      <div className="flex items-center gap-8 mx-auto">
+      {/* Tabs — right on mobile, centered on lg+ */}
+      <div className="flex items-center gap-6 sm:gap-8">
         {navLink('home',    'Home',    '🏠')}
         {navLink('gallery', 'Gallery', '📸')}
       </div>
