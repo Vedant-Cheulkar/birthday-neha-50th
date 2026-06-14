@@ -1218,7 +1218,7 @@ function GalleryPage() {
         <SectionHeader tag="50 Years of Photos" title="The Photo Album"
           subtitle="Tap any photo to expand · More coming soon 🎞" />
         <div className="masonry-grid mt-8">
-          {GALLERY_PHOTOS.map((photo, i) => (
+          {GALLERY_PHOTOS.filter(p => p.src).map((photo, i) => (
             <PhotoCard key={photo.id} {...photo} idx={i} onClick={() => openModal(i)} />
           ))}
         </div>
@@ -1237,8 +1237,8 @@ function GalleryPage() {
         <p className="font-mono text-[9px] tracking-[0.35em] text-[#1E0615]/18 mt-2 uppercase">1976 – 2026 · 50 Years of Neha Being Iconic</p>
       </footer>
 
-      <PhotoModal photo={modalIdx !== null ? GALLERY_PHOTOS[modalIdx] : null}
-        all={GALLERY_PHOTOS} onClose={closeModal} onNav={navModal} />
+      <PhotoModal photo={modalIdx !== null ? GALLERY_PHOTOS.filter(p => p.src)[modalIdx] : null}
+        all={GALLERY_PHOTOS.filter(p => p.src)} onClose={closeModal} onNav={navModal} />
     </div>
   )
 }
