@@ -883,6 +883,7 @@ function VideoSection() {
             ref={videoRef}
             src="/birthday-video.mp4"
             controls={playing}
+            controlsList="nodownload"
             playsInline
             style={{ width: '100%', display: 'block', maxHeight: 420, objectFit: 'cover' }}
             onEnded={() => setPlaying(false)}
