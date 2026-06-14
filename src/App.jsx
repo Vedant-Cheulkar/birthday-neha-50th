@@ -25,6 +25,18 @@ const GALLERY_PHOTOS = [
   { id: 17, src: '/photos/photo4.jpg',    year: 'Feb 2026', label: 'Wild Heart 🦁',              aspect: 'aspect-[3/4]', color: '#EC4899' },
   { id: 18, src: '/photos/photo5.jpg',    year: 'Feb 2026', label: '50 & Iconic ✨',             aspect: 'aspect-[3/4]', color: '#F472B6' },
   { id: 19, src: '/photos/photo12.jpg',   year: '2024',     label: 'Ganesh Festival Blessings 🙏', aspect: 'aspect-[4/3]', color: '#FB923C' },
+  { id: 20, src: '/photos/photo13.jpg',  year: '2026',     label: 'Celebrations 🎉',              aspect: 'aspect-[3/4]', color: '#EC4899' },
+  { id: 21, src: '/photos/photo14.jpg',  year: '2026',     label: 'Pure Joy 😄',                  aspect: 'aspect-[3/4]', color: '#A855F7' },
+  { id: 22, src: '/photos/photo15.jpg',  year: '2026',     label: 'Cherished Moments 💕',         aspect: 'aspect-[3/4]', color: '#DB2777' },
+  { id: 23, src: '/photos/photo16.jpg',  year: '2026',     label: 'Family Love 👨‍👩‍👧',               aspect: 'aspect-[3/4]', color: '#FB923C' },
+  { id: 24, src: '/photos/photo17.jpg',  year: '2026',     label: 'Together Always 🌸',           aspect: 'aspect-[3/4]', color: '#F43F5E' },
+  { id: 25, src: '/photos/photo18.jpg',  year: '2026',     label: 'Golden Memories ✨',            aspect: 'aspect-[3/4]', color: '#BE185D' },
+  { id: 26, src: '/photos/photo19.jpg',  year: '2026',     label: 'Spreading Smiles 😊',          aspect: 'aspect-[3/4]', color: '#F472B6' },
+  { id: 27, src: '/photos/photo20.jpg',  year: '2026',     label: 'Birthday Queen 👑',            aspect: 'aspect-[3/4]', color: '#EC4899' },
+  { id: 28, src: '/photos/photo21.jpg',  year: '2026',     label: 'Blessed & Beautiful 🙏',       aspect: 'aspect-[3/4]', color: '#A855F7' },
+  { id: 29, src: '/photos/photo22.jpg',  year: '2026',     label: 'Radiant Energy 💫',            aspect: 'aspect-[3/4]', color: '#FB923C' },
+  { id: 30, src: '/photos/photo23.jpg',  year: '2026',     label: 'Squad Goals 🎊',               aspect: 'aspect-[4/3]', color: '#DB2777' },
+  { id: 31, src: '/photos/photo24.jpg',  year: '2026',     label: 'Simply Iconic 🌟',             aspect: 'aspect-[3/4]', color: '#BE185D' },
 ]
 
 const FILM_FRAMES = [
