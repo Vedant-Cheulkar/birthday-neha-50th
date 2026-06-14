@@ -834,6 +834,95 @@ function ShowcaseCard({ photo, index }) {
   )
 }
 
+/* ─────────────── VIDEO SECTION ─────────────── */
+
+function VideoSection() {
+  const [ref, visible] = useReveal(0.1)
+  const [playing, setPlaying] = useState(false)
+  const videoRef = useRef(null)
+
+  const handlePlay = () => {
+    setPlaying(true)
+    setTimeout(() => videoRef.current?.play(), 50)
+  }
+
+  return (
+    <section className="py-20 px-5 relative overflow-hidden" style={{ background: '#FFF0F8' }}>
+      {/* Soft glow blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/4 w-80 h-80 rounded-full -translate-y-1/2"
+          style={{ background: '#EC4899', filter: 'blur(130px)', opacity: 0.08 }} />
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full"
+          style={{ background: '#A855F7', filter: 'blur(130px)', opacity: 0.07 }} />
+      </div>
+
+      <div ref={ref} className="relative z-10 max-w-2xl mx-auto text-center"
+        style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(28px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }}>
+
+        {/* Header */}
+        <span className="inline-block font-mono text-[10px] tracking-[0.35em] uppercase px-4 py-1.5 rounded-full mb-4 text-[#EC4899]"
+          style={{ background: 'rgba(236,72,153,0.1)', border: '1px solid rgba(236,72,153,0.2)' }}>
+          🎬 Special Moment
+        </span>
+        <h2 className="font-space text-3xl sm:text-4xl font-bold text-[#1E0615] mb-2">
+          A Glimpse of{' '}
+          <span style={{ background: 'linear-gradient(135deg, #EC4899, #A855F7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            Neha ✨
+          </span>
+        </h2>
+        <p className="font-outfit text-base text-[#1E0615]/45 mb-8">A special video moment 💕</p>
+
+        {/* Video card */}
+        <div className="relative rounded-2xl overflow-hidden mx-auto"
+          style={{
+            maxWidth: 560,
+            boxShadow: '0 20px 60px rgba(236,72,153,0.2), 0 0 0 1px rgba(236,72,153,0.12)',
+            background: '#1a0a12',
+          }}>
+          <video
+            ref={videoRef}
+            src="/birthday-video.mp4"
+            controls={playing}
+            playsInline
+            style={{ width: '100%', display: 'block', maxHeight: 420, objectFit: 'cover' }}
+            onEnded={() => setPlaying(false)}
+          />
+
+          {/* Play overlay — hidden once playing */}
+          {!playing && (
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer"
+              style={{ background: 'rgba(15,3,10,0.45)', backdropFilter: 'blur(2px)' }}
+              onClick={handlePlay}>
+              {/* Ripple rings */}
+              <div className="absolute rounded-full" style={{ width: 120, height: 120, border: '2px solid rgba(236,72,153,0.3)', animation: 'neonPulse 2s ease-in-out infinite' }} />
+              <div className="absolute rounded-full" style={{ width: 90, height: 90, border: '2px solid rgba(236,72,153,0.5)', animation: 'neonPulse 2s ease-in-out infinite', animationDelay: '0.4s' }} />
+              {/* Play button */}
+              <div className="relative flex items-center justify-center w-16 h-16 rounded-full"
+                style={{ background: 'linear-gradient(135deg, #EC4899, #A855F7)', boxShadow: '0 0 40px rgba(236,72,153,0.6)' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 3 }}>
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <p className="mt-4 font-space text-white text-sm tracking-widest uppercase font-semibold"
+                style={{ textShadow: '0 0 20px rgba(236,72,153,0.8)' }}>
+                Play Video
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Decorative dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {['#EC4899','#A855F7','#FB923C'].map((c, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ background: c, opacity: 0.5 }} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /* ─────────────── PHOTO SHOWCASE ─────────────── */
 
 function PhotoShowcase({ setPage }) {
@@ -1036,6 +1125,11 @@ function HomePage({ setPage }) {
       </section>
 
       <div className="w-full h-px" style={{ background: 'linear-gradient(to right, transparent, #EC489950, #A855F750, transparent)' }} />
+
+      {/* ── Birthday Video ── */}
+      <VideoSection />
+
+      <div className="w-full h-px" style={{ background: 'linear-gradient(to right, transparent, #F472B650, #EC489950, transparent)' }} />
 
       {/* ── Photo Showcase ── */}
       <PhotoShowcase setPage={setPage} />
